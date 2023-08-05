@@ -10,4 +10,7 @@
     height: 25px;
     top: 51px;
     left: 69px;
+    @include breakpoints(1260){
+      top: 30px;
+}
   }

@@ -16,7 +16,7 @@
         justify-content: center;
         gap: 2.5rem;
         @include breakpoints(1260){
-            margin-top: 3.125rem;
+            margin-top: 3rem;
     }
       }
 
@@ -28,8 +28,11 @@
           letter-spacing: 0.063rem;
           text-align: center;
           text-transform: uppercase;
+          @include breakpoints(1260){
+            font-size: 2.2rem;
+    }
           @include breakpoints(800){
-            font-size: 2.3rem;
+            font-size: 2rem;
         }
             @include breakpoints(664){
             font-size: 1.8rem;
