@@ -104,6 +104,15 @@ li {
   background-color: rgb(255, 209, 91);
 }
 
+.dropdown {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: none;
+}
+
 .container {
   max-width: 1850px;
   margin: auto;

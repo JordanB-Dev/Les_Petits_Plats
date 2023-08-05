@@ -16,33 +16,56 @@
       <a href="/"
         ><img src="./assets/Logo.png" alt="Les petits plats logo" id="logo"
       /></a>
-
-      <main>
-        <section class="search">
-          <div class="search_content">
-            <h1 class="search_title">
-              Cherchez parmi plus de 1500 recettes <br />du quotidien, simples
-              et délicieuses
-            </h1>
-            <form class="search_bar container">
-              <div class="search_input-container">
-                <input
-                  type="text"
-                  id="search_input"
-                  class="search_input"
-                  placeholder="Rechercher une recette, un ingrédient, ..."
-                  pattern="[a-zA-Z0-9]+"
-                  aria-labelledby="Rechercher"
-                  aria-label="Rechercher"
-                />
-              </div>
-              <button class="search_button" type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
     </header>
+
+    <main>
+      <section class="search">
+        <div class="search_content">
+          <h1 class="search_title">
+            Cherchez parmi plus de 1500 recettes <br />du quotidien, simples et
+            délicieuses
+          </h1>
+          <form class="search_bar container">
+            <div class="search_input-container">
+              <input
+                type="text"
+                id="search_input"
+                class="search_input"
+                placeholder="Rechercher une recette, un ingrédient, ..."
+                pattern="[a-zA-Z0-9]+"
+                aria-labelledby="Rechercher"
+                aria-label="Rechercher"
+              />
+            </div>
+            <button class="search_button" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="dropdown">
+        <div class="ingredients">
+          <button class="dropdown_buttom">
+            Ingrédients
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div class="apparels">
+          <button class="dropdown_buttom">
+            Appareils
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div class="ustensils">
+          <button class="dropdown_buttom">
+            Ustensiles
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
