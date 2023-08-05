@@ -129,7 +129,12 @@ h2 {
 }
 @media screen and (max-width: 1220px) {
   .dropdown {
-    margin-left: 0px;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 854px) {
+  .dropdown {
+    padding-top: 1rem;
   }
 }
 .dropdown_buttom {
@@ -151,7 +156,22 @@ h2 {
 }
 @media screen and (max-width: 1220px) {
   .dropdown_buttom {
-    margin-left: 30px;
+    margin-left: 1.875rem;
+  }
+}
+@media screen and (max-width: 854px) {
+  .dropdown_buttom {
+    margin-top: 0.625rem;
+  }
+}
+@media screen and (max-width: 606px) {
+  .dropdown_buttom {
+    width: 8.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .dropdown_buttom {
+    width: 11.75rem;
   }
 }
 
