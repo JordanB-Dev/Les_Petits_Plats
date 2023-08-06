@@ -215,4 +215,9 @@ h2 {
   }
 }
 
+.recipes article img {
+  width: 200px;
+  height: 200px;
+}
+
 /*# sourceMappingURL=style.css.map */
