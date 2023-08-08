@@ -116,6 +116,7 @@ h2 {
   font-size: 1.25rem;
   margin-right: 0.438rem;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .search_button:hover {
   color: rgb(0, 0, 0);

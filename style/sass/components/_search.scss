@@ -78,6 +78,7 @@
                         font-size: 1.25rem;
                         margin-right: 0.438rem;
                         transition: all .5s;
+                        cursor: pointer;
                         &:hover {
                             color: $Black;
                             background-color: $Yellow;
