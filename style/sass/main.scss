@@ -6,13 +6,9 @@
 
 @import "./components/search";
 @import "./components/dropdown";
+@import "./components/recipes";
 
 @import "./layout/container";
 @import "./layout/header";
 @import "./layout/footer";
-
-.recipes article img {
-    width: 200px;
-    height: 200px;
-}
 

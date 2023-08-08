@@ -191,6 +191,113 @@ h2 {
   }
 }
 
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.875rem;
+  gap: 1.875rem;
+  flex-wrap: wrap;
+}
+.recipes_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 23.75rem;
+  height: 45.688rem;
+  border-radius: 1.313rem;
+  background-color: rgb(255, 255, 255);
+}
+.recipes_img {
+  width: 100%;
+  height: 15.813rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+  object-fit: cover;
+}
+.recipes_title {
+  font-family: "Anton", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.688rem;
+  letter-spacing: 0rem;
+  margin-top: 1.575rem;
+  margin-left: 1.875rem;
+}
+.recipes_title-h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.09rem;
+  color: rgb(122, 122, 122);
+  margin-top: 1rem;
+  margin-left: 1.875rem;
+}
+.recipes_desc {
+  margin-top: 1rem;
+  overflow-y: auto;
+}
+.recipes_desc-text {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.875rem;
+  color: rgb(0, 0, 0);
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+  overflow-y: auto;
+}
+.recipes_ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 1.875rem;
+  margin-left: 1.875rem;
+  margin-right: 1.875rem;
+}
+.recipes_ingredients h4 {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.75rem;
+  color: rgb(122, 122, 122);
+}
+.recipes_ingredients-content {
+  margin-top: 1rem;
+  margin-left: 1.875rem;
+  gap: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recipes_ingredient-content {
+  display: flex;
+  width: 9.375rem;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 0.625rem;
+}
+.recipes_ingredient-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.875rem;
+  color: rgb(0, 0, 0);
+}
+.recipes_ingredient-quantity {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.875rem;
+  color: rgb(122, 122, 122);
+}
+.recipes_time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background-color: #FFD15B;
+  width: 4.375rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-family: "Manrope", sans-serif;
+  padding: 0.313rem;
+  text-align: center;
+}
+
 .container {
   max-width: 1850px;
   margin: auto;
@@ -213,11 +320,6 @@ h2 {
   #logo {
     top: 30px;
   }
-}
-
-.recipes article img {
-  width: 200px;
-  height: 200px;
 }
 
 /*# sourceMappingURL=style.css.map */
