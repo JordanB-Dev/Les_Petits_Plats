@@ -21,7 +21,7 @@
       }
 
       &_title {
-          color: $TitleSearch;
+          color: $Yellow;
           font-family: $FontAnton;
           font-size: 2.75rem;
           line-height: 4.125rem;
@@ -80,7 +80,7 @@
                         transition: all .5s;
                         &:hover {
                             color: $Black;
-                            background-color: $TitleSearch;
+                            background-color: $Yellow;
                           }
                     }
   }
