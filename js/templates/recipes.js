@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const recipeTemplate = (data) => {
+const RecipeTemplate = (data) => {
   const { image, name, ingredients, time, description } = data
   const picture = `assets/images/${image}`
 
@@ -96,3 +96,5 @@ const recipeTemplate = (data) => {
   }
   return { getRecipeCardDOM }
 }
+
+export { RecipeTemplate }
