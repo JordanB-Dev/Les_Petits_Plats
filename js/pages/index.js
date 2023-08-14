@@ -1,5 +1,6 @@
 import { RecipeTemplate } from './../templates/recipes.js'
 import { FetchData } from './../../data/fetch.js'
+import { SearchBar } from '../utils/searchBar.js'
 
 const DisplayCard = (recipes) => {
   const recipesSection = document.querySelector('.recipes')
