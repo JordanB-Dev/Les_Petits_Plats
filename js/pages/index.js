@@ -14,6 +14,7 @@ const DisplayCard = (recipes) => {
 const init = async () => {
   const { recipes } = await FetchData()
   DisplayCard(recipes)
+  SearchBar()
 }
 
 init()
