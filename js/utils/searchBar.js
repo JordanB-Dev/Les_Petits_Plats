@@ -4,7 +4,7 @@ import { DisplayCard } from '../pages/index.js'
 let filterRecipes = []
 let searchValue = ''
 
-const SearchBar = async (data) => {
+const SearchBar = async () => {
   let recipes = await FetchData()
   filterRecipes = mainSearch(recipes, '')
 
