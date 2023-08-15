@@ -1,5 +1,6 @@
 import { FetchData } from '../../data/fetch.js'
 import { DisplayCard } from '../pages/index.js'
+import { RecipesNumber } from './recipesNumber.js'
 
 let filterRecipes = []
 let searchValue = ''
@@ -53,8 +54,10 @@ const mainSearch = (recipes, searchValue) => {
   }
   if (filterRecipes.length > 0) {
     DisplayCard(filterRecipes)
+    RecipesNumber(filterRecipes)
   } else {
     noRecipe(searchValue)
+    RecipesNumber(filterRecipes)
   }
 
   return filterRecipes
