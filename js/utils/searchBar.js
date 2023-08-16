@@ -1,6 +1,7 @@
 import { FetchData } from '../../data/fetch.js'
 import { DisplayCard } from '../pages/index.js'
 import { RecipesNumber } from './recipesNumber.js'
+import { ResetSearch } from './resetSearch.js'
 
 let filterRecipes = []
 let searchValue = ''
@@ -25,6 +26,7 @@ const SearchBar = async () => {
       filterRecipes = mainSearch(recipes, searchValue)
     }
   })
+  ResetSearch(recipes)
 }
 
 const getFilterRecipes = (recipes, searchValue) => {
