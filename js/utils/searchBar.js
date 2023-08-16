@@ -6,7 +6,7 @@ import { ResetSearch } from './resetSearch.js'
 let filterRecipes = []
 let searchValue = ''
 
-const SearchBar = async () => {
+const InitSearchBar = async () => {
   let recipes = await FetchData()
   filterRecipes = mainSearch(recipes, '')
 
@@ -65,4 +65,4 @@ const mainSearch = (recipes, searchValue) => {
   return filterRecipes
 }
 
-export { SearchBar }
+export { InitSearchBar }
