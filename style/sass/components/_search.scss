@@ -8,80 +8,85 @@
     justify-content: center;
     align-items: center;
 
-    &_content {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2.5rem;
-        @include breakpoints(1260){
-            margin-top: 3rem;
-    }
-      }
-
-      &_title {
-          color: $Yellow;
-          font-family: $FontAnton;
-          font-size: 2.75rem;
-          line-height: 4.125rem;
-          letter-spacing: 0.063rem;
-          text-align: center;
-          text-transform: uppercase;
-          @include breakpoints(1260){
-            font-size: 2.2rem;
-    }
-          @include breakpoints(800){
-            font-size: 2rem;
-        }
-            @include breakpoints(664){
-            font-size: 1.8rem;
-        }       
-            @include breakpoints(531){
-            font-size: 1.45rem;
-        }       
-        @include breakpoints(421){
-            font-size: 1.3rem;
-        }       
-        }
-
-        &_bar {
-            width: 80%;
-            height: 4.5rem;
-            border-radius: 0.313rem;
-            background-color: $White;
+        &_content {
+            width: 90%;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-          }
+            justify-content: center;
+            gap: 2.5rem;
+            @include breakpoints(1260){
+                margin-top: 3rem;
+        }
+        }
 
-            &_input-container {
-                display: flex;
-                width: 95%;
+            &_title {
+                color: $Yellow;
+                font-family: $FontAnton;
+                font-size: 2.75rem;
+                line-height: 4.125rem;
+                letter-spacing: 0.063rem;
+                text-align: center;
+                text-transform: uppercase;
+                @include breakpoints(1260){
+                    font-size: 2.2rem;
             }
-
-                &_input {
-                    border: none;
-                    outline: none;
-                    width: 90%;
-                    padding-left: 0.938rem;
-                    margin-left: 0.625rem;
+                @include breakpoints(800){
+                    font-size: 2rem;
+                }
+                    @include breakpoints(664){
+                    font-size: 1.8rem;
+                }       
+                    @include breakpoints(531){
+                    font-size: 1.45rem;
+                }       
+                @include breakpoints(421){
+                    font-size: 1.3rem;
+                }       
                 }
 
-                    &_button {
-                        width: 2.813rem;
-                        height: 2.813rem;
-                        border: none;
-                        border-radius: 0.625rem;
-                        background-color: $Black;
-                        color: $White;
-                        font-size: 1.25rem;
-                        margin-right: 0.438rem;
-                        transition: all .5s;
-                        cursor: pointer;
-                        &:hover {
-                            color: $Black;
-                            background-color: $Yellow;
-                          }
-                    }
+            &_bar {
+                width: 80%;
+                height: 4.5rem;
+                border-radius: 0.313rem;
+                background-color: $White;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+                &_input-container {
+                    display: flex;
+                    width: 95%;
+                }
+
+                        &_input {
+                            border: none;
+                            outline: none;
+                            width: 90%;
+                            padding-left: 0.938rem;
+                            margin-left: 0.625rem;
+                        }
+
+                            &_button {
+                                width: 2.813rem;
+                                height: 2.813rem;
+                                border: none;
+                                border-radius: 0.625rem;
+                                background-color: $Black;
+                                color: $White;
+                                font-size: 1.25rem;
+                                margin-right: 0.438rem;
+                                transition: all .5s;
+                                cursor: pointer;
+                                &:hover {
+                                    color: $Black;
+                                    background-color: $Yellow;
+                                }
+                            }
+
+                                &_reset {
+                                    cursor: pointer;
+                                    opacity: 0;
+                                }
   }
