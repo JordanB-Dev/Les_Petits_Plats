@@ -118,4 +118,13 @@
                                                     text-align: center;
                                                 }
 
+                                                &_number {
+                                                    position: absolute;
+                                                    right: 6.25rem;
+                                                    padding: 0.938rem 0.938rem;
+                                                    @include breakpoints(970){
+                                                        right: 0;
+                                                    }
+                                                }
+
     }
