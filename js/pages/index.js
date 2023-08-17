@@ -1,6 +1,7 @@
 import { RecipeTemplate } from './../templates/recipes.js'
 import { FetchData } from './../../data/fetch.js'
 import { InitSearchBar } from '../utils/searchBar.js'
+import { InitDropDownArrow } from '../utils/dropdownArrow.js'
 
 const DisplayCard = (recipes) => {
   const recipesSection = document.querySelector('.recipes')
@@ -16,6 +17,7 @@ const init = async () => {
   const { recipes } = await FetchData()
   DisplayCard(recipes)
   InitSearchBar()
+  InitDropDownArrow()
 }
 
 init()
