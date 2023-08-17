@@ -2,9 +2,13 @@ import { FetchData } from '../../data/fetch.js'
 import { DisplayCard } from '../pages/index.js'
 import { RecipesNumber } from './recipesNumber.js'
 import { ResetSearch } from './resetSearch.js'
+import { DisplayOptions } from './dropdownOption.js'
 
 let filterRecipes = []
 let searchValue = ''
+let filterIngredients = []
+let filterApparels = []
+let filterUstensils = []
 
 const InitSearchBar = async () => {
   let recipes = await FetchData()
@@ -61,6 +65,9 @@ const mainSearch = (recipes, searchValue) => {
     noRecipe(searchValue)
     RecipesNumber(filterRecipes)
   }
+  filterIngredients = DisplayOptions(filterRecipes, 'ingredients')
+  filterApparels = DisplayOptions(filterRecipes, 'apparels')
+  filterUstensils = DisplayOptions(filterRecipes, 'ustensils')
 
   return filterRecipes
 }
