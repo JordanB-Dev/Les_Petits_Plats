@@ -6,7 +6,7 @@ const InitDropDownArrow = () => {
 
 const OpenDropDown = (option) => {
   const li = document.querySelector(`.${option} .dropdown_list`)
-  const btn = document.querySelector(`.${option}`)
+  const btn = document.querySelector(`.${option} .dropdown_buttom`)
   if (btn) {
     btn.addEventListener('click', () => {
       const content = document.querySelector(`.${option} .dropdown_content`)
