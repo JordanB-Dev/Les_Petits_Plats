@@ -78,7 +78,7 @@ const searchDropdowns = (el, option, recipes) => {
         DropdownLi(el, option)
       })
     }
-    return els
+    return el
   })
   const form = elDropdown.querySelector(`.${option} .dropdown_header-content`)
 
