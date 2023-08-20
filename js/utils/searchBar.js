@@ -3,12 +3,14 @@ import { DisplayCard } from '../pages/index.js'
 import { RecipesNumber } from './recipesNumber.js'
 import { ResetSearch } from './resetSearch.js'
 import { DisplayOptions } from './dropdownOption.js'
+import { DropdownLi } from '../templates/dropdown.js'
 
 let filterRecipes = []
 let searchValue = ''
 let filterIngredients = []
 let filterApparels = []
 let filterUstensils = []
+let filterTags = []
 
 const InitSearchBar = async () => {
   let recipes = await FetchData()
@@ -52,6 +54,39 @@ const noRecipe = (search = '') => {
   }
 }
 
+const searchDropdowns = (el, option, recipes) => {
+  filterTags = recipes
+  const elDropdown = document.querySelector(`.${option} .dropdown_content`)
+  const elSearch = elDropdown.querySelector('.dropdown_input')
+
+  elSearch.addEventListener('keyup', async (e) => {
+    let filterEl = []
+    let searchValue = ''
+    const elOptions = document.querySelector(`.${option} .dropdown_options`)
+
+    if (e.target.value.length > 2) {
+      searchValue = e.target.value.toLowerCase()
+      filterEl = el.filter((el) => el.toLowerCase().includes(searchValue))
+      elOptions.innerHTML = ''
+
+      filterEl.forEach((el) => {
+        DropdownLi(el, option)
+      })
+    } else {
+      elOptions.innerHTML = ''
+      el.forEach((el) => {
+        DropdownLi(el, option)
+      })
+    }
+    return els
+  })
+  const form = elDropdown.querySelector(`.${option} .dropdown_header-content`)
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+  })
+}
+
 const mainSearch = (recipes, searchValue) => {
   if (searchValue.length > 2 && searchValue) {
     filterRecipes = getFilterRecipes(recipes, searchValue)
@@ -68,6 +103,10 @@ const mainSearch = (recipes, searchValue) => {
   filterIngredients = DisplayOptions(filterRecipes, 'ingredients')
   filterApparels = DisplayOptions(filterRecipes, 'apparels')
   filterUstensils = DisplayOptions(filterRecipes, 'ustensils')
+
+  searchDropdowns(filterIngredients, 'ingredients', filterRecipes)
+  searchDropdowns(filterApparels, 'apparels', filterRecipes)
+  searchDropdowns(filterUstensils, 'ustensils', filterRecipes)
 
   return filterRecipes
 }
