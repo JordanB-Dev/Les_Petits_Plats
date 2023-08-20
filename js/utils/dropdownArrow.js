@@ -25,4 +25,13 @@ const OpenDropDown = (option) => {
   }
 }
 
-export { OpenDropDown, InitDropDownArrow }
+const CloseDropDown = (e) => {
+  const li = e.target.parentElement.parentElement
+  const i = e.target.parentElement.parentElement.parentElement
+  i.querySelector('i').classList.toggle('fa-chevron-up')
+  i.querySelector('i').classList.toggle('fa-chevron-down')
+  li.classList.add('dropdown_close')
+  li.classList.remove('dropdown_open')
+}
+
+export { OpenDropDown, CloseDropDown, InitDropDownArrow }

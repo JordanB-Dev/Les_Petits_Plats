@@ -4,6 +4,8 @@ import { RecipesNumber } from './recipesNumber.js'
 import { ResetSearch } from './resetSearch.js'
 import { DisplayOptions } from './dropdownOption.js'
 import { DropdownLi } from '../templates/dropdown.js'
+import { NoRecipe } from './noRecipe.js'
+import { ManageTags } from './tag.js'
 
 let filterRecipes = []
 let searchValue = ''
@@ -47,13 +49,6 @@ const getFilterRecipes = (recipes, searchValue) => {
   return recipes
 }
 
-const noRecipe = (search = '') => {
-  const recipes = document.querySelector('.recipes')
-  if (search) {
-    recipes.innerHTML = `<div class="recipes_noRecipe"><h2>Aucune recette ne contient "${search}", vous pouvez chercher « tarte aux pommes », « poisson », etc. ..</h2></div>`
-  }
-}
-
 const searchDropdowns = (el, option, recipes) => {
   filterTags = recipes
   const elDropdown = document.querySelector(`.${option} .dropdown_content`)
@@ -78,6 +73,7 @@ const searchDropdowns = (el, option, recipes) => {
         DropdownLi(el, option)
       })
     }
+    ManageTags()
     return el
   })
   const form = elDropdown.querySelector(`.${option} .dropdown_header-content`)
@@ -85,6 +81,45 @@ const searchDropdowns = (el, option, recipes) => {
   form.addEventListener('submit', (e) => {
     e.preventDefault()
   })
+}
+
+const SearchTag = (el, recipes) => {
+  if (el.length > 0) {
+    recipes = filterRecipes
+
+    el.forEach((el) => {
+      recipes = recipes.filter(
+        (recipe) =>
+          recipe.ingredients.some((ingredient) =>
+            ingredient.ingredient.toLowerCase().includes(el)
+          ) ||
+          recipe.appliance.toLowerCase().includes(el) ||
+          recipe.ustensils.some((ustensil) =>
+            ustensil.toLowerCase().includes(el)
+          )
+      )
+      if (recipes.length > 0) {
+        DisplayCard(recipes)
+
+        RecipesNumber(recipes)
+      } else {
+        NoRecipe()
+      }
+    })
+  } else {
+    recipes = filterRecipes
+
+    DisplayCard(recipes)
+
+    RecipesNumber(recipes)
+  }
+  filterIngredients = DisplayOptions(recipes, 'ingredients')
+
+  filterApparels = DisplayOptions(recipes, 'apparels')
+
+  filterUstensils = DisplayOptions(recipes, 'ustensils')
+
+  return recipes
 }
 
 const mainSearch = (recipes, searchValue) => {
@@ -97,7 +132,7 @@ const mainSearch = (recipes, searchValue) => {
     DisplayCard(filterRecipes)
     RecipesNumber(filterRecipes)
   } else {
-    noRecipe(searchValue)
+    NoRecipe(searchValue)
     RecipesNumber(filterRecipes)
   }
   filterIngredients = DisplayOptions(filterRecipes, 'ingredients')
@@ -108,7 +143,8 @@ const mainSearch = (recipes, searchValue) => {
   searchDropdowns(filterApparels, 'apparels', filterRecipes)
   searchDropdowns(filterUstensils, 'ustensils', filterRecipes)
 
+  ManageTags()
   return filterRecipes
 }
 
-export { InitSearchBar }
+export { InitSearchBar, SearchTag }
