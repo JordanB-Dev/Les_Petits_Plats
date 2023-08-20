@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch ./style/sass/main.scss:style/css/style.css",
+    "sass": "sass --watch ./style/sass/main.scss:style/css/style.css -w --style compressed",
     "prefix": "postcss ./style/css/style.css --use autoprefixer -d ./style/css/"
   },
   "type": "module",
   "author": "Jordan Bachelez",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.28",
     "postcss-cli": "^10.1.0",
     "sass": "^1.64.2"
   }

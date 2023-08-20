@@ -125,6 +125,9 @@
                                                     @include breakpoints(970){
                                                         right: 0;
                                                     }
+                                                    @include breakpoints(421){
+                                                       font-size: 1.2rem;
+                                                    }
                                                 }
 
     }

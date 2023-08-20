@@ -4,7 +4,7 @@ import { DisplayTags } from '../templates/tags.js'
 import { SearchTag } from './searchBar.js'
 
 let filterTags = []
-let selectEls = []
+let selectEl = []
 
 const ManageTags = async () => {
   const elLi = document.querySelectorAll('.dropdown_li')
@@ -14,17 +14,17 @@ const ManageTags = async () => {
       const dropdown = e.target.parentElement.parentElement
       const input = dropdown.querySelector('.dropdown_input')
 
-      if (!selectEls.includes(el.innerText.toLowerCase())) {
-        selectEls.push(el.innerText.toLowerCase())
+      if (!selectEl.includes(el.innerText.toLowerCase())) {
+        selectEl.push(el.innerText.toLowerCase())
       }
 
-      displayTag(selectEls)
+      displayTag(selectEl)
 
-      selectEls = deleteTag(selectEls)
+      selectEl = deleteTag(selectEl)
       CloseDropDown(e)
       let recipes = await FetchData()
 
-      filterTags = SearchTag(selectEls, recipes)
+      filterTags = SearchTag(selectEl, recipes)
 
       input.value = ''
 
@@ -53,7 +53,7 @@ const deleteTag = (elArray) => {
       const index = elArray.indexOf(el)
       elArray.splice(index, 1)
       let recipes = await FetchData()
-      filterTags = SearchTag(selectEls, recipes)
+      filterTags = SearchTag(selectEl, recipes)
       tag.remove()
 
       ManageTags()
