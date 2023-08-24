@@ -38,15 +38,24 @@ const InitSearchBar = async () => {
 }
 
 const getFilterRecipes = (recipes, searchValue) => {
-  recipes = recipes.recipes.filter(
-    (recipe) =>
-      recipe.name.toLowerCase().includes(searchValue) ||
+  let recipesFilter = []
+
+  for (let recipe of recipes.recipes) {
+    if (
       recipe.description.toLowerCase().includes(searchValue) ||
-      recipe.ingredients.some((ingredient) =>
-        ingredient.ingredient.toLowerCase().includes(searchValue)
-      )
-  )
-  return recipes
+      recipe.name.toLowerCase().includes(searchValue)
+    ) {
+      recipesFilter.push(recipe)
+    } else {
+      for (const ingredient of recipe.ingredients) {
+        if (ingredient.ingredient.toLowerCase().includes(searchValue)) {
+          recipesFilter.push(recipe)
+          break
+        }
+      }
+    }
+  }
+  return recipesFilter
 }
 
 const searchDropdowns = (el, option, recipes) => {
